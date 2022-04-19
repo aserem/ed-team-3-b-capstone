@@ -14,7 +14,7 @@ import java.util.Set;
 @SuperBuilder
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-@Entity()
+@Entity
 @Table(name = "VIDEOS", indexes = {@Index(columnList = "title")})
 @SequenceGenerator(name = "idGenerator", sequenceName = "VIDEOS_SEQ", initialValue = 1, allocationSize = 1)
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -41,6 +41,6 @@ public class Video extends BaseModel {
             joinColumns = { @JoinColumn(name = "video_id") },
             inverseJoinColumns = { @JoinColumn(name = "person_id") }
     )
-    Set<Person> people = new HashSet<>();
+    Set<Person> persons = new HashSet<>();
 
 }

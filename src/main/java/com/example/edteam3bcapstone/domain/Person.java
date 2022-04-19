@@ -37,6 +37,6 @@ public class Person extends BaseModel{
     @Column(length = 10, nullable = false)
     private PersonCategory personCategory;
 
-    @ManyToMany(mappedBy = "people")
+    @ManyToMany(mappedBy = "persons")
     private Set<Video> videos = new HashSet<>();
 }
