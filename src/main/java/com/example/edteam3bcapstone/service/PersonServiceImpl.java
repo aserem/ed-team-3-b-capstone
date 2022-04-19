@@ -22,4 +22,8 @@ public class PersonServiceImpl extends BaseServiceImpl<Person> implements Person
     }
 
 
+    @Override
+    public Person findByLastname(String lastname) {
+        return personRepository.findByLastname(lastname);
+    }
 }
