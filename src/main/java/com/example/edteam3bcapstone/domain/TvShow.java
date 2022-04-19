@@ -14,10 +14,11 @@ import java.util.Set;
 @AllArgsConstructor
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
+@PrimaryKeyJoinColumn(name = "video")
 @Entity
 @Table(name = "TV_SHOWS")
 @Data
-@SequenceGenerator(name = "idGenerator", sequenceName = "TV_SHOWS_SEQ", initialValue = 1, allocationSize = 1)
+//@SequenceGenerator(name = "idGenerator", sequenceName = "TV_SHOWS_SEQ", initialValue = 1, allocationSize = 1)
 public class TvShow extends Video {
 
 

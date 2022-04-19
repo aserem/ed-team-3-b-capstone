@@ -5,6 +5,7 @@ import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,7 +19,7 @@ import java.util.Set;
 @Table(name = "VIDEOS", indexes = {@Index(columnList = "title")})
 @SequenceGenerator(name = "idGenerator", sequenceName = "VIDEOS_SEQ", initialValue = 1, allocationSize = 1)
 @Inheritance(strategy = InheritanceType.JOINED)
-public class Video extends BaseModel {
+public abstract class Video extends BaseModel implements Serializable {
 
     @NotNull
     @Column(length = 50, nullable = false)
