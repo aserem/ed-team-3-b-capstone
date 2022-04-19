@@ -4,6 +4,8 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.HashSet;
@@ -29,9 +31,11 @@ public abstract class Video extends BaseModel implements Serializable {
     @Column(length = 500, nullable = false)
     private String plotSummary;
 
-    @OneToOne
-    @JoinColumn(name = "rating_id")
-    private Rating rating;
+    @NotNull
+    @Min(value = 0)
+    @Max(value = 10)
+    @Column(length = 2, nullable = false)
+    private Integer rating;
 
     @NotNull
     private VideoCategory videoCategory;
