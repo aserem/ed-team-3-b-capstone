@@ -21,7 +21,7 @@ import java.util.Set;
 @Table(name = "VIDEOS", indexes = {@Index(columnList = "title")})
 @SequenceGenerator(name = "idGenerator", sequenceName = "VIDEOS_SEQ", initialValue = 1, allocationSize = 1)
 @Inheritance(strategy = InheritanceType.JOINED)
-public abstract class Video extends BaseModel implements Serializable {
+public class Video extends BaseModel implements Serializable {
 
     @NotNull
     @Column(length = 50, nullable = false)

@@ -37,7 +37,7 @@ public class Person extends BaseModel{
     @Column(length = 10, nullable = false)
     private PersonCategory personCategory;
 
-    @ManyToMany(mappedBy = "persons")
+    @ManyToMany(mappedBy="persons",fetch=FetchType.EAGER)
     private Set<Video> videos = new HashSet<>();
 
 }
