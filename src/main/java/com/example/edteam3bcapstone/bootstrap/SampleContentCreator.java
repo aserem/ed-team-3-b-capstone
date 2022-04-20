@@ -23,7 +23,6 @@ public class SampleContentCreator extends BaseComponent implements CommandLineRu
     private final PersonService personService;
     private final FilmService filmService;
     private final TvShowService tvShowService;
-    private final BaseService baseService;
 
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.M.yyyy");
     @Override
