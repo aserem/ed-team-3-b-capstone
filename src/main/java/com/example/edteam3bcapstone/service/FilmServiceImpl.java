@@ -17,4 +17,9 @@ public class FilmServiceImpl extends BaseServiceImpl<Film> implements FilmServic
     public JpaRepository<Film, Long> getRepository() {
         return filmRepository;
     }
+
+    @Override
+    public Film findByTitle(final String title) {
+        return filmRepository.findByTitle(title);
+    }
 }
