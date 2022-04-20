@@ -18,10 +18,7 @@ import java.util.Set;
 @Entity
 @Table(name = "TV_SHOWS")
 @Data
-//@SequenceGenerator(name = "idGenerator", sequenceName = "TV_SHOWS_SEQ", initialValue = 1, allocationSize = 1)
 public class TvShow extends Video {
-
-
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)
@@ -30,9 +27,4 @@ public class TvShow extends Video {
     @Min(value = 1)
     private Integer numberOfSeasons;
 
-//    @ManyToMany
-//    @JoinTable(name="videos_people",
-//            joinColumns = { @JoinColumn(name = "tv_shows_id")},
-//            inverseJoinColumns = { @JoinColumn(name = "people_id")})
-//    private Set<Person> people = new HashSet<>();
 }

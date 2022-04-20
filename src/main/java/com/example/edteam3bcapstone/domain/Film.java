@@ -20,17 +20,10 @@ import java.util.Set;
 @Entity
 @Table(name = "FILMS")
 @Data
-//@SequenceGenerator(name = "idGenerator", sequenceName = "FILMS_SEQ", initialValue = 1, allocationSize = 1)
 public class Film extends Video {
 
     @Temporal(TemporalType.TIMESTAMP)
     @Column(nullable = false)
     private Date releaseDate;
-
-//    @ManyToMany
-//    @JoinTable(name="videos_people",
-//            joinColumns = { @JoinColumn(name = "films_id")},
-//            inverseJoinColumns = { @JoinColumn(name = "people_id")})
-//    private Set<Person> people = new HashSet<>();
 
 }
