@@ -2,6 +2,7 @@ package com.example.edteam3bcapstone.bootstrap;
 
 import com.example.edteam3bcapstone.base.BaseComponent;
 import com.example.edteam3bcapstone.domain.*;
+import com.example.edteam3bcapstone.service.BaseService;
 import com.example.edteam3bcapstone.service.FilmService;
 import com.example.edteam3bcapstone.service.PersonService;
 import com.example.edteam3bcapstone.service.TvShowService;
@@ -22,14 +23,13 @@ public class SampleContentCreator extends BaseComponent implements CommandLineRu
     private final PersonService personService;
     private final FilmService filmService;
     private final TvShowService tvShowService;
+    private final BaseService baseService;
 
     SimpleDateFormat simpleDateFormat = new SimpleDateFormat("dd.M.yyyy");
     @Override
     public void run(String... args) throws Exception {
 
-        Person person = Person.builder().firstname("Samuel").lastname("Jackson").dateOfBirth(simpleDateFormat.parse("01.10.1950")).personCategory(PersonCategory.ACTOR).build();
-        Set<Person> personSet = new HashSet<>();
-        personSet.add(person);
+
 
         List<Film> films = List.of(
                 Film.builder().title("The Avengers").plotSummary("MCU movie").videoCategory(VideoCategory.FANTASY).rating(8).releaseDate(simpleDateFormat.parse("01.10.2019")).build(),
@@ -57,6 +57,14 @@ public class SampleContentCreator extends BaseComponent implements CommandLineRu
         );
 
         logger.info("Created {} persons.", personService.createAll(persons).size());
+
+
+        Person person = Person.builder().firstname("Samuel").lastname("Jackson").dateOfBirth(simpleDateFormat.parse("01.10.1950")).personCategory(PersonCategory.ACTOR).build();
+        TvShow tvShow = TvShow.builder().title("Walking Dead").plotSummary("Zombie tv series").videoCategory(VideoCategory.HORROR).rating(5).firstReleaseDate(simpleDateFormat.parse("01.10.2005")).numberOfSeasons(11).build();
+
+        //tvShow.getId();
+        //tvShow.getPersons().add(person);
+        //person.getVideos().add(tvShow);
 
     }
 }
