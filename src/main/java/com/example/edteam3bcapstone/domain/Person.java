@@ -40,7 +40,4 @@ public class Person extends BaseModel{
     @ManyToMany(mappedBy = "persons")
     private Set<Video> videos = new HashSet<>();
 
-    public void addVideo(Video video){
-        getVideos().add(video);
-    }
 }
